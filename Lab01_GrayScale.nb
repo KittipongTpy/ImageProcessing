@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1604128,      26336]
-NotebookOptionsPosition[   1603450,      26317]
-NotebookOutlinePosition[   1603844,      26333]
-CellTagsIndexPosition[   1603801,      26330]
+NotebookDataLength[   1607006,      26403]
+NotebookOptionsPosition[   1606217,      26384]
+NotebookOutlinePosition[   1606654,      26401]
+CellTagsIndexPosition[   1606611,      26398]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26270,7 +26270,7 @@ A9fsNjrR78GVTOhpxgY/KzZPjMU2HdeRKvPT2mPzcDgpH0fTinE8sxRvkHVP
         "], {{0, 701.}, {700., 0}}, {0, 255},
         ColorFunction->RGBColor,
         ImageResolution->{72., 72.},
-        SmoothingQuality->"High"],
+        RasterInterpolation->"High"],
        BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
        Selectable->False],
       DefaultBaseStyle->"ImageGraphics",
@@ -26281,7 +26281,7 @@ A9fsNjrR78GVTOhpxgY/KzZPjMU2HdeRKvPT2mPzcDgpH0fTinE8sxRvkHVP
  CellChangeTimes->{{3.963300147885662*^9, 3.963300151155748*^9}, {
   3.963300523259375*^9, 3.963300537546934*^9}, {3.963300568228548*^9, 
   3.963300569139536*^9}, {3.96330060701018*^9, 3.963300619134535*^9}},
- CellLabel->"In[44]:=",ExpressionUUID->"6550eb58-00ee-4a9c-a43d-f89f3ba6dce1"],
+ CellLabel->"In[1]:=",ExpressionUUID->"6550eb58-00ee-4a9c-a43d-f89f3ba6dce1"],
 
 Cell[BoxData[
  RowBox[{
@@ -26290,34 +26290,102 @@ Cell[BoxData[
  CellChangeTimes->{{3.9633001564109898`*^9, 3.9633001659043703`*^9}, {
   3.9633002912308702`*^9, 3.963300304030643*^9}, {3.963300341002397*^9, 
   3.963300351105514*^9}, {3.963300622179525*^9, 3.963300623757016*^9}},
- CellLabel->"In[46]:=",ExpressionUUID->"efd59f02-9818-4455-ac8c-976f8daae4f9"],
-
-Cell[CellGroupData[{
+ CellLabel->"In[2]:=",ExpressionUUID->"efd59f02-9818-4455-ac8c-976f8daae4f9"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"PixelValue", "[", 
-   RowBox[{"img", ",", " ", 
+  RowBox[{"ImgToGray", "[", "img_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
     RowBox[{"{", 
-     RowBox[{"1", ",", "1"}], "}"}]}], "]"}], ";"}]], "Code",
+     RowBox[{"dim", ",", " ", 
+      RowBox[{"grayImg", "=", 
+       RowBox[{"{", "}"}]}]}], "}"}], ",", "\n", "\t", 
+    RowBox[{
+     RowBox[{"dim", " ", "=", " ", 
+      RowBox[{"ImageDimensions", "[", "img", "]"}]}], ";", "\n", "\t", 
+     RowBox[{"grayImg", " ", "=", " ", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "j", ",", " ", 
+          RowBox[{
+           RowBox[{"Total", "[", 
+            RowBox[{
+             RowBox[{"PixelValue", "[", 
+              RowBox[{"img", ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", " ", "j"}], "}"}]}], "]"}], "[", 
+             RowBox[{"[", 
+              RowBox[{";;", 
+               RowBox[{"-", "2"}]}], "]"}], "]"}], "]"}], "/", "3"}]}], "}"}],
+         ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "1", ",", " ", 
+          RowBox[{"dim", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", " ", "1", ",", " ", 
+          RowBox[{"dim", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+     "\t", 
+     RowBox[{"Return", "[", "grayImg", "]"}], ";"}]}], "\n", "]"}]}]], "Code",
  CellChangeTimes->{{3.9633003558349657`*^9, 3.963300356341215*^9}, {
-  3.963300455763715*^9, 3.963300512505335*^9}, {3.963300629812562*^9, 
-  3.963300632409505*^9}},ExpressionUUID->"e35473a8-2e92-4a6a-8193-\
-dede526af390"],
+   3.963300455763715*^9, 3.963300512505335*^9}, {3.963300629812562*^9, 
+   3.963300632409505*^9}, {3.9633015376392117`*^9, 3.9633017384990177`*^9}, 
+   3.9633017753487816`*^9, {3.9633018799730415`*^9, 3.9633019044417133`*^9}, {
+   3.9633019916208344`*^9, 3.9633019987044754`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"e35473a8-2e92-4a6a-8193-dede526af390"],
 
 Cell[BoxData[
- RowBox[{"{", 
+ RowBox[{"ImgToGray", "[", "img", "]"}]], "Code",
+ CellChangeTimes->{{3.963301745121233*^9, 3.963301749190895*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"d180ad1c-14bb-f04c-bb70-b774d6683581"],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{
-  "0.396078431372549`", ",", "0.09019607843137255`", ",", 
-   "0.23137254901960785`", ",", "1.`"}], "}"}]], "Output",
- CellChangeTimes->{{3.9633004611880417`*^9, 3.9633005131334677`*^9}, {
-  3.96330062517207*^9, 3.963300630458756*^9}},
- CellLabel->"Out[49]=",ExpressionUUID->"cdea3fe6-2548-4232-ad49-9769f514717b"]
-}, Open  ]]
+   RowBox[{"ImgToGray", "[", "img_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"dim", ",", " ", "grayData"}], "}"}], ",", "\n", "    ", 
+     RowBox[{
+      RowBox[{"dim", " ", "=", " ", 
+       RowBox[{"ImageDimensions", "[", "img", "]"}]}], ";", "\n", "    ", 
+      RowBox[{"grayData", " ", "=", " ", 
+       RowBox[{"Table", "[", "\n", "        ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Total", "[", 
+           RowBox[{"ColorConvert", "[", 
+            RowBox[{
+             RowBox[{"PixelValue", "[", 
+              RowBox[{"img", ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"x", ",", " ", "y"}], "}"}]}], "]"}], ",", 
+             " ", "\"\<RGB\>\""}], "]"}], "]"}], "/", "3"}], ",", "\n", 
+         "        ", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", " ", "1", ",", " ", 
+           RowBox[{"dim", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", " ", "1", ",", " ", 
+           RowBox[{"dim", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], "}"}]}], "\n", "    ", "]"}]}], 
+      ";", "\n", "    ", 
+      RowBox[{"Image", "[", 
+       RowBox[{"grayData", ",", " ", "\"\<Real\>\""}], "]"}]}]}], "\n", 
+    "]"}]}], "\n"}]], "Code",
+ CellChangeTimes->{{3.9633018582211304`*^9, 3.9633018976908417`*^9}, 
+   3.9633021238307686`*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"6ee0553a-d4b4-024e-af03-c5cc1e147f54"]
 },
-WindowSize->{808, 748},
-WindowMargins->{{Automatic, 295}, {37, Automatic}},
-FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+WindowSize->{1152, 651.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (March 14, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"720a29bb-1193-499f-9f90-de1c49411abc"
 ]
@@ -26332,15 +26400,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1601688, 26263, 161, "Code",ExpressionUUID->"6550eb58-00ee-4a9c-a43d-f89f3ba6dce1"],
-Cell[1602249, 26285, 418, 7, 65, "Code",ExpressionUUID->"efd59f02-9818-4455-ac8c-976f8daae4f9"],
-Cell[CellGroupData[{
-Cell[1602692, 26296, 385, 9, 65, "Code",ExpressionUUID->"e35473a8-2e92-4a6a-8193-dede526af390"],
-Cell[1603080, 26307, 354, 7, 42, "Output",ExpressionUUID->"cdea3fe6-2548-4232-ad49-9769f514717b"]
-}, Open  ]]
+Cell[558, 20, 1601690, 26263, 126, "Code",ExpressionUUID->"6550eb58-00ee-4a9c-a43d-f89f3ba6dce1"],
+Cell[1602251, 26285, 417, 7, 50, "Code",ExpressionUUID->"efd59f02-9818-4455-ac8c-976f8daae4f9"],
+Cell[1602671, 26294, 1799, 43, 120, "Code",ExpressionUUID->"e35473a8-2e92-4a6a-8193-dede526af390"],
+Cell[1604473, 26339, 207, 3, 50, "Code",ExpressionUUID->"d180ad1c-14bb-f04c-bb70-b774d6683581"],
+Cell[1604683, 26344, 1530, 38, 190, "Code",ExpressionUUID->"6ee0553a-d4b4-024e-af03-c5cc1e147f54"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
