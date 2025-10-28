@@ -72,7 +72,6 @@ Demonstrates morphology-based connected-component analysis without sliding-windo
 
 ### Blurring Function and Restoration
 Simulates **linear motion blur** and performs **restoration** in the frequency domain.
-$$ H(u, v) = t * sinc(π(au + bv)) * exp[-iπ(au + bv)] $$
 
 - Simulates sequential horizontal and vertical motion blurs (T₁, T₂).  
 - Restores blurred images by dividing Fourier-transformed images with known H(u, v).
