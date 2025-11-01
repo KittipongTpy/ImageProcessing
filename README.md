@@ -78,3 +78,13 @@ Simulates **linear motion blur** and performs **restoration** in the frequency d
 
 **Observation:**  
 Effective restoration achieved when motion parameters (a, b, T) are known and noise is negligible.
+
+---
+
+### Variable Thresholding
+This lab implements **adaptive thresholding** to handle uneven illumination in grayscale images.
+Instead of one global threshold, the image is divided into smaller partitions, and each part gets its own **local Otsu threshold**.
+
+**Result:**
+Local thresholds adapt to illumination, correctly separating dark circular objects from the background much better than global thresholding.
+
